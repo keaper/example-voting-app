@@ -1,25 +1,25 @@
-Instavote
+la votación definitiva
 =========
 
-Getting started
+Primeros pasos
 ---------------
 
-Download [Docker for Mac or Windows](https://www.docker.com).
 
-Run in this directory:
+
+Levantar el compose
 
     $ docker-compose up
 
-The app will be running at [http://localhost:5000](http://localhost:5000), and the results will be at [http://localhost:5001](http://localhost:5001).
+La aplicación funcionará en [http://localhost:5000](http://localhost:5000), y los resultados se verán en [http://localhost:5001](http://localhost:5001).
 
-Architecture
+Arquitectura
 -----
 
 ![Architecture diagram](architecture.png)
 
-* A Python webapp which lets you vote between two options
-* A Redis queue which collects new votes
-* A .NET worker which consumes votes and stores them in…
-* A Postgres database backed by a Docker volume
-* A Node.js webapp which shows the results of the voting in real time
+* Aplicación en Python para elegir entre las dos opciones (frontend) 
+* Una BBDD en memoria REDIS que recolecta las votaciones 
+* Un worker desarrollado en .NET que pasa los votos en memoria a BBDD
+* Una BBDD Postgres que guarda sus datos en un volumen de Docker en disco
+* La aplicación desarrollada en Node.js para mostrar los votos en tiempo real
 
